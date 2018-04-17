@@ -19,7 +19,7 @@
                         <div class="navbar-header">
                             <a class="navbar-brand" href="#"></a>
                         </div>
-                        <ul class="nav navbar-nav"><!--
+                        <ul class="nav navbar-nav">--><!--
                             <li><a href="{{url('/')}}">Principal</a></li>
                             <li><a href="{{url('/llibres')}}">Llibres</a></li>
                             <li><a href="{{url('/temes')}}">Temes</a></li>
@@ -29,10 +29,28 @@
                             <li><a href="{{url('/temes/crea')}}">Crear tema</a></li>
                             <li><a href="{{url('/temes/esborra')}}">Esborrar tema</a></li>
                             <li><a href="{{url('/temes/modifica')}}">Modificar tema</a></li>
-                    </ul>
+                        </ul>
                     </div>
                 </nav>
             </div>-->
+                <div class="topnav">
+                  <p class="logo" href="index.html">Pulmentum</p>
+                   <div class="search-container">
+                        <form class"searchbox" action="/action_page.php">
+                            <input type="text" placeholder="Cerca..." name="cerca">
+                        </form>
+                    </div>
+                    @if (Route::has('login'))
+                        <div class="top-right links">
+                            @auth
+                                <a href="{{ url('/home') }}">Home</a>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+                                <a href="{{ route('register') }}">Register</a>
+                            @endauth
+                        </div>
+                    @endif
+                </div>
             @yield('header')
         </header>
         <section id="benvinguda">

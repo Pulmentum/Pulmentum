@@ -1,3 +1,4 @@
+@extends('layouts.master')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -5,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        @section('titlePage')
+            Index
+        @stop
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -21,32 +24,10 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
             }
 
             .links > a {
@@ -58,38 +39,73 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+        @section('header')
+        @stop
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+        @section('content')
+            <div class="col-sm-4 descripcio">
+                <h1>Pulmentum ofereix gran varietat de classes via streaming per a desenvolupadors.</h1>
+            </div>
+            <div class="col-sm-5 descripcio2">
+                <div class="carousel">
+                    <div class="bxslider">
+                        <div><img class="img-carousel" src="images/welcome/carousel1.png" title="pulmentum_1" alt="pulmentum_1"></div>
+                        <div><img class="img-carousel" src="images/welcome/carousel2.jpg" title="pulmentum_2" alt="pulmentum_2"></div>
+                        <div><img class="img-carousel" src="images/welcome/carousel3.png" title="pulmentum_3" alt="pulmentum_3"></div>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="flex-div-row">
+                    <div class="col-sm-6 info">
+                        <h3 class="subtitols">Com funciona?</h3>
+                    </div>
+                    <div class="col-sm-6 info">
+                        <a href="{{url('/registrar')}}"><h3 class="subtitols">Comença</h3></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @stop
+
+        @section('footer')
+            <div id="container">
+                <div id="col1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div id="col2">
+                    <ul id="footerlink">
+                        <li><a href="#">Link test 1</a></li>
+                        <li><a href="#">Link test 2</a></li>
+                        <li><a href="#">Link test 3</a></li>
+                    </ul>
+                </div> 
+
+                <div id="col3">
+                    <ul id="footerlink">
+                        <li><a href="#">Link test 4</a></li>
+                        <li><a href="#">Link test 5</a></li>
+                        <li><a href="#">Link test 6</a></li>
+                    </ul>
+                </div>  
+            </div>
+            <div id="colbot">
+                <p>Lorem Ipsum Dolor Company S.A.</p>
+            </div>          
+            <script>
+                $(function(){
+                    $('.bxslider').bxSlider({
+                        mode: 'fade',
+                        slideWidth: 600,
+                        adaptativeHeight: true
+                    });
+                });
+            </script>
+        @stop
     </body>
 </html>
+
+
+
+
+
