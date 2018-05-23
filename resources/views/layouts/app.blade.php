@@ -18,6 +18,7 @@
             <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
         <!-- Plugin CSS -->
             <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
@@ -135,4 +136,11 @@
     </body>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
+        {!! $calendar_details->script() !!}
+
+
 </html>

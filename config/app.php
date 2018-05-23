@@ -162,6 +162,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
     ],
 
     /*
@@ -215,6 +216,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
     ],
 
 ];

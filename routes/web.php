@@ -29,3 +29,6 @@ Route::resource('professors', 'ProfessorsImparteixenController');
 
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('events', 'EventController@index')->name('events.index');
+Route::post('events', 'EventController@addEvent')->name('events.add');
