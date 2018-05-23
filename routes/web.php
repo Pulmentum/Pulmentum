@@ -25,3 +25,6 @@ Route::resource('curs', 'CursosController');
 Route::resource('pagament', 'DadesBancariesController');
 Route::resource('alumnes', 'AlumnesInscritsController');
 Route::resource('professors', 'ProfessorsImparteixenController');
+
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');

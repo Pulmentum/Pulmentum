@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('idUsuari');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('Cognoms')->nullable();
             $table->string('email', 100)->unique();
             $table->datetime('DataAlta')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('PaisResidencia')->nullable();
             $table->string('NTargeta')->nullable();
             $table->string('Imatge')->default('user.svg');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

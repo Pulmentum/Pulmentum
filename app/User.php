@@ -33,4 +33,8 @@ class User extends Authenticatable
         return $this->hasMany('App\ProfessorImparteix');
     }
 
+    function socialProviders()
+    {
+        return $this->hasMany(SocialProvider::class);
+    }
 }
