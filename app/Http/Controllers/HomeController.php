@@ -23,6 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('curs.moodle');
     }
+
+    // public function language(lang)
+    // {
+    //     $url1 = url()->current();
+    //     $url2 = URL::to('/');
+    //     $url2 = strlen($url2);
+    //     $n = strlen($url1);
+    //     $n = $n*(-1);
+    //     $url1 = substr($url1, $url2, -$n);
+    //     App::setLocale($lang);
+    //     return view($url1);
+    // }
 }
