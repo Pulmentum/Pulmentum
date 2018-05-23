@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('PaisResidencia')->nullable();
             $table->string('NTargeta')->nullable();
             $table->string('Imatge')->default('user.svg');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

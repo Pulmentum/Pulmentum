@@ -95,16 +95,16 @@
                            <div class="social-login">
                                 <h3>També pots entrar amb:</h3>
                                 <div class="social-login-buttons">
-                                    <button type="" id="githubgray" class="btn btn-link-1  btn-link-1-github " href="#">
+                                    <button type="" id="githubgray" class="btn btn-link-1  btn-link-1-github " onclick="location.href=`{{ url('login/github') }}`">
                                         <i class="fa fa-github "></i> Github
                                     </button>
-                                     <button type="" class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                     <button type="" class="btn btn-link-1 btn-link-1-twitter" onclick="location.href=`{{ url('login/twitter') }}`">
                                         <i class="fa fa-twitter"></i> Twitter
                                     </button>
-                        <!--            <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                  <a class="btn btn-link-1 btn-link-1-google-plus" onclick="location.href=`{{ url('login/google') }}`">
                                         <i class="fa fa-google-plus"></i> Google Plus
                                 </a>
-                        -->         </div>
+                                </div>
                             </div>
                         </div>
                        <div class="col-sm-1 middle-border"></div>
