@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App;
+//use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,15 +27,14 @@ class HomeController extends Controller
         return view('curs.moodle');
     }
 
-    // public function language(lang)
-    // {
-    //     $url1 = url()->current();
-    //     $url2 = URL::to('/');
-    //     $url2 = strlen($url2);
-    //     $n = strlen($url1);
-    //     $n = $n*(-1);
-    //     $url1 = substr($url1, $url2, -$n);
-    //     App::setLocale($lang);
-    //     return view($url1);
-    // }
+    public function language()
+    {   
+        $lang = explode('?lang=', url()->current());
+        $url = explode('/public/', url()->previous());
+        $url = end($url);
+        //Session::put('locale', $lang);
+        //session(['my_locale' => Request::Input($lang)]);
+        //App::setLocale($lang);
+        return redirect($url);
+    }
 }

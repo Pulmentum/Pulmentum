@@ -16,6 +16,11 @@ Crea un curs
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     @stop
+@extends('layouts.app')
+@section('titlePage')
+Crea un curs
+@stop
+@section('content')
 <div class="container">
     {!! Form::open(array('url' => '/curs', 'method' => 'POST')) !!}
     <h3>Nou</h3><br>
@@ -28,7 +33,7 @@ Crea un curs
     <div class="form-group">
         {!! Form::label('nTipus', 'Tipus') !!}
         <div class="form-controls">
-            {{ Form::select('nomTipus', ['Llenguatge', 'Framework', 'API', 'Llibreria', 'SDK', 'Pluggin', 'Altre'], null, ['class' => 'form-control', 'id' => 'selTipus']) }}
+            {{ Form::select('nomTipus', ['Llenguatge' => 'Llenguatge', 'Framework' => 'Framework', 'API' => 'API', 'Llibreria' => 'Llibreria', 'SDK' => 'SDK', 'Pluggin' => 'Pluggin', 'Altre' => 'Altre'], null, ['class' => 'form-control', 'id' => 'selTipus']) }}
         </div>
     </div>
     <div class="form-group">
@@ -40,7 +45,7 @@ Crea un curs
     <div class="form-group">
         {!! Form::label('Nivell', 'Nivell') !!}
         <div class="form-controls">
-            {{ Form::select('Nivell', ['Principiant', 'Intermig', 'Avançat'], null, ['class' => 'form-control']) }}
+            {{ Form::select('Nivell', ['Principiant' => 'Principiant', 'Intermig' => 'Intermig', 'Avançat' => 'Avançat'], null, ['class' => 'form-control']) }}
         </div>
     </div>
     <div class="form-group">
@@ -52,7 +57,7 @@ Crea un curs
     <div class="form-group">
         {!! Form::label('Idioma', 'Idioma') !!}
         <div class="form-controls">
-            {{ Form::select('Idioma', ['Català', 'Castellà', 'Anglès'], null, ['class' => 'form-control']) }}
+            {{ Form::select('Idioma', ['Català' => 'Català', 'Castellà' => 'Castellà', 'Anglès' => 'Anglès'], null, ['class' => 'form-control']) }}
         </div>
     </div>
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}

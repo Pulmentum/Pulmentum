@@ -73,12 +73,12 @@ class CursosController extends Controller
             $url = DB::table('professor_imparteixes')->where('idCurs', $curs->idCurs)->where('idUsuari', $id)->get();
 
             if($url->isEmpty()){
-                $url = 'curs.show_info';    /* Mostrar vista per usuàri NO-ALUMNE/NO-PROFESSOR del curs */
+                $url = 'curs.show_info';            /* Mostrar vista per usuàri NO-ALUMNE/NO-PROFESSOR del curs */
             } else {
-                $url = 'curs.show';         /* Mostrar vista per usuàri PROFESSOR del curs */
+                $url = 'curs.show_admin';           /* Mostrar vista per usuàri PROFESSOR del curs */
             }
         } else {
-            $url = 'curs.show';             /* Mostrar vista per usuàri ALUMNE del curs */
+            $url = 'curs.show';                     /* Mostrar vista per usuàri ALUMNE del curs */
         }
 
         return view($url)->with('curs', $curs);

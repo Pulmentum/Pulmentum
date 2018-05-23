@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    protected $fillable = ['NomCurs','NomLlenguatge', 'nomTipus','Nivell','Preu','Idioma','Banner'];
+    protected $fillable = ['NomCurs','NomLlenguatge','nomTipus','Nivell','Preu','Idioma','Banner'];
 
     protected $primaryKey = 'idCurs';
 

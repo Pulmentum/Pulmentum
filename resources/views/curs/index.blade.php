@@ -28,34 +28,55 @@ Cursos
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    @stop
+@stop
 @section('content')
 	<div class="container">
-		@guest @else <a href="{{ asset('curs/create') }}">Crear un curs</a>@endguest
+		@auth
+		<a href="{{ asset('curs/create') }}">Crear un curs</a>
+		@endauth
 		<h1 class="my-4">Page Heading
 			<small>Secondary Text</small>
 		</h1>
 		{{ $cursos->links() }}
 		@if (!is_null($cursos))
-			@foreach ($cursos as $curs)
-			<div class="row">
-				<div class="col-md-7">
-					<a @guest href="{{ url('/login') }}" @else href="{{ asset('curs/'.$curs->idCurs) }}">@endguest
-						<img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('storage/images/banner/'.$curs->Banner) }}" alt="">
-					</a>
-				</div>
-				<div class="col-md-5">
-					<a href="{{ asset('curs/'.$curs->idCurs) }}">
-						<h3>{{	$curs->NomCurs }}</h3>
-					</a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. antium veniam exercitationem expedita laborum at voluptate. re, voluptates totam at aut nemo deserunt rem magni pariatur  perspiciatis atque eveniet unde.</p>
-					<a class="btn btn-primary" href="{{ asset('curs/'.$curs->idCurs) }}">View Project</a>
-				</div>
-			</div>
-			<hr>
-			<br>
-
-			@endforeach
+			@auth
+				@foreach ($cursos as $curs)
+					<div class="row">
+						<div class="col-md-7">
+							<a href="{{ url('/login') }}" href="{{ asset('curs/'.$curs->idCurs) }}">
+								<img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('storage/images/banner/'.$curs->Banner) }}" alt="">
+							</a>
+						</div>
+						<div class="col-md-5">
+							<a href="{{ asset('curs/'.$curs->idCurs) }}">
+								<h3>{{	$curs->NomCurs }}</h3>
+							</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. antium veniam exercitationem expedita laborum at voluptate. re, voluptates totam at aut nemo deserunt rem magni pariatur  perspiciatis atque eveniet unde.</p>
+							<a class="btn btn-primary" href="{{ route('login') }}">View Project</a>
+						</div>
+					</div>
+					<hr>
+					<br>
+				@endforeach
+			@else
+				@foreach ($cursos as $curs)
+					<div class="row">
+						<div class="col-md-7">
+							<a href="{{ url('/login') }}" href="{{ route('login') }}">
+								<img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('storage/images/banner/'.$curs->Banner) }}" alt="">
+							</a>
+						</div>
+						<div class="col-md-5">
+							<a href="{{ route('login') }}">
+								<h3>{{	$curs->NomCurs }}</h3>
+							</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. antium veniam exercitationem expedita laborum at voluptate. re, voluptates totam at aut nemo deserunt rem magni pariatur  perspiciatis atque eveniet unde.</p>
+						</div>
+					</div>
+					<hr>
+					<br>
+				@endforeach
+			@endauth
 		@endif
 		<ul class="pagination justify-content-center">
 			<li class="page-item">

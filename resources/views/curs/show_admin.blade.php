@@ -9,7 +9,7 @@ Curs
 <div class="container">
 
 	@if (!is_null($curs))
-		<h3 style="color:blue">Vista del curs dels usuaris ALUMNES</h3><br>
+		<h3 style="color:blue">Vista del curs dels usuaris PROFESSORS</h3><br>
 		<h3>Nom del curs: {{$curs->NomCurs}}</h3>
 		<h3>Tipus: {{$curs->nomTipus}}</h3>
 		<h3>Matèria: {{$curs->NomLlenguatge}}</h3>

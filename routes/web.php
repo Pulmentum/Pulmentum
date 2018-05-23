@@ -18,17 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get(url()->current(), 'HomeController@language');
+Route::get('/language', 'HomeController@language')->name('language');
 
 Route::resource('usuari', 'UsersController');
 Route::resource('curs', 'CursosController');
 Route::resource('pagament', 'DadesBancariesController');
 Route::resource('alumnes', 'AlumnesInscritsController');
 Route::resource('professors', 'ProfessorsImparteixenController');
-
-Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-
-Route::get('events', 'EventController@index')->name('events.index');
-Route::post('events', 'EventController@addEvent')->name('events.add');
